@@ -259,12 +259,12 @@ dskOptions::dskOptions() : Desktop(LOADER.GetImageN("setup013", 0))
     {
         VideoMode ratio = getAspectRatio(*it);
         std::stringstream str;
-        str << it->width << "x" << it->height;
+        str << std::to_string(it->width) << "x" << std::to_string(it->height);
         // Make the length always the same as 'iiiixiiii' to align the ratio
         int len = str.str().length();
         for(int i = len; i < 4 + 1 + 4; i++)
             str << " ";
-        str << " (" << ratio.width << ":" << ratio.height << ")";
+        str << " (" << std::to_string(ratio.width) << ":" << std::to_string(ratio.height) << ")";
 
         cbVideoModes.AddString(str.str());
 
